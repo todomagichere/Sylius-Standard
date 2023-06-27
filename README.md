@@ -50,7 +50,7 @@ Then enter `localhost` in your browser or execute `open localhost` in your termi
 
 The simplest way to deploy your Sylius store via Docker is via `docker-compose.prod.yml` configuration file.
 To do that you need to install [Docker](https://docs.docker.com/get-docker/) on your VPS and define `MYSQL_PASSWORD` environment.
-Then execute `docker compose -f docker-compose.prod.yml up -d` command in your terminal. The `MYSQL_PASSWORD` env will be automatically
+Then execute `docker-compose -f docker-compose.prod.yml up -d` command in your terminal. The `MYSQL_PASSWORD` env will be automatically
 applied to the rest of the config.
 
 > When using a Virtual Private Server (VPS) we recommend having at least 2GB of RAM memory
@@ -62,8 +62,8 @@ sudo sh get-docker.sh
 
 export MYSQL_PASSWORD=SLyPJLaye7
 
-docker compose -f docker-compose.prod.yml up -d
-docker compose -f docker-compose.prod.yml exec php bin/console sylius:fixtures:load --no-interaction
+docker-compose -f docker-compose.yml up -d
+docker-compose -f docker-compose.yml exec php bin/console sylius:fixtures:load --no-interaction
 ```
 
 ## Troubleshooting
